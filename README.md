@@ -1,5 +1,4 @@
 # INFO 201 Final Project, Group 36
----
 # Domain of Interest
 We are interesting in looking at public health...
 
@@ -8,7 +7,7 @@ TODO
 
 ## Examples of Data-Driven Projects
 TODO
----
+
 # Data
 ## Source 1
  - Downloaded from _
