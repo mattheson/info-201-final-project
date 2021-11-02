@@ -1,5 +1,4 @@
-# INFO 201 Final Project, Group 36
-# Domain of Interest - __Public Health__
+# INFO 201 Final Project, Group 36, Public Health
 
 ## Why are we interested in public health?
 Public health has become a topic of focus in recent years due to the COVID-19 pandemic.
