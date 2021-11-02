@@ -9,9 +9,9 @@ We are interested in focusing on mortality in different age groups/nationalities
 reasons and rates of death.
 
 ## Data-Driven Questions
-1. What are the most common causes of death in different __age groups__?
-2. How do these causes of death between different age groups compare __between countries__?
-3. How much does __access to healthcare__ affect mortality rates (inside and between countries)?
+1. What are the most common causes of death in different _age groups_?
+2. How do these causes of death between different age groups compare _between countries_?
+3. How much does _access to healthcare_ affect mortality rates (inside and between countries)?
 
 ## Examples of Data-Driven Projects
 1. [Morbidity and Mortality among Adolescents and Young Adults in the United States](https://www.jhsph.edu/research/centers-and-institutes/center-for-adolescent-health/_images/_pre-redesign/az/US%20Fact%20Sheet_FINAL.pdf)
