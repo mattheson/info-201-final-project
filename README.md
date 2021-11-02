@@ -19,11 +19,9 @@ reasons and rates of death.
 3. [An International Comparison of Adolescent and Young Adult Mortality](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3938202/)
 
 # Datasets
-  - __Dataset 1__
-    - Downloaded from _
+  1. [Child mortality data](https://data.unicef.org/resources/dataset/child-mortality/)
     - How was the data collected or generated? Make sure to explain who collected the data (not necessarily the same people that host the data), and who or what the data is about?
-    - How many observations (rows) are in your data?
-    - How many features (columns) are in the data?
-    - What questions (from above) can be answered using the data in this dataset?
+    - 600 rows, 33 columns
+    - We can compare the mortality rates of young people between countries to make conclusions about the risk they are at because of their location. Another question we can answer is what country has the lowest mortality rate for young people (i.e. in what country do young people survive the most?)?
 
 
