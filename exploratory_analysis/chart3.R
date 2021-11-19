@@ -3,7 +3,7 @@ library("ggplot2")
 library("dplyr")
 library("gridExtra")
 
-data <- read.csv("/Users/javidnuriyev/info-201-final-project/data/Life Expectancy Data.csv")
+data <- read.csv("../data/Life Expectancy Data.csv")
 
 group_by_developed <- data %>%
   filter(Status == "Developed") %>%
