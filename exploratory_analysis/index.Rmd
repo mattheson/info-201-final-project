@@ -9,18 +9,46 @@ library("knitr")
 library("ggplot2")
 library("ggforce")
 
+source("aggregate_table.R")
 source("chart1.R")
 
 ```
 
 # Introduction
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+In this analysis, we are looking at a life expectancy dataset obtained from Kaggle.
+This data is originally sourced from the WHO, and contains information regarding
+life expectancy and other factors which affect it (education, alcohol consumption, 
+rates of diseases, etc.).
 
 # Summary
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+The set contains data from **193 different countries** in the **years 2000 to 2015**.
+There are **22 features** in this set with **2938 observations**. There are a
+total of **161 developing** countries and **32 developed** countries. The ratio 
+between the developing to developed countries and the ratio of developing to 
+developed observations matches closely. Both developing and developed countries 
+share a **maximum life expectancy of 89**, while the developing countries' minimum 
+is almost half **(36.3)** of the developed countries minimum **(69.9)**. This 
+trend of developing countries having the lower end of life expectancies was expected.
+Through further analysis, we will be able to understand which factors in these 
+developing countries have a negative effect on life expectancy.
 
 # Aggregate Table
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+
+```{r echo=FALSE}
+kable(aggregate_table)
+```
+
+The most meaningful way to group each country was by whether it was developing or
+developed, which is why we only have two rows in this table. The averages are simply
+the means of the corresponding values (expectancy, population, gdp). Despite the
+small number of rows in this table, we can still obtain a lot of information about 
+the average differences between developing and developed countries. 
+Developing countries have a **noticeably lower life expectancy**
+than developed countries, with much **higher populations** and **significantly less GDP**
+than developed countries. It is astonishing to see how larger developing countries'
+populations are, almost **twice that of developed countries**. Even more astonishing but
+somewhat unsurprising is how developed countries' average GDP almost **quintuples 
+that of developing countries**.
 
 # Chart 1
 ## Life Expectancy over Time
