@@ -54,19 +54,17 @@ that of developing countries**.
 ## Life Expectancy over Time
 
 ```{r echo=FALSE}
-# TODO: Are you able to import this graph from chart1.R?
 # Chart 1
-ggplot(year, aes(x=Group.1,y=Life.expectancy)) +
-  geom_bar(stat="Identity", fill="steelblue") + 
-  xlab("Year") + ylab("Life Expectancy") +
-  facet_zoom(ylim = c(60, 75))
+expectancy_time_plot
 ```
 
 We included this chart to show how life expectancy has changed over the years.
 We think that it's important to see the general trend and see if it
 aligns of what we think how life expectancy should change, and We think that
 it does corroborate with our beliefs that as time passes on our health as
-technology gets better.
+technology gets better. Though it is important to mention that despite knowing
+that it improves over time, it doesn't show what is causing it explicity to
+increase.
 
 # Chart 2
 ## aaaaaa

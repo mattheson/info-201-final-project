@@ -4,7 +4,7 @@ library("tidyverse")
 library("ggforce")
 data <- read.csv("../data/Life Expectancy Data.csv")
 year <- aggregate(data[4],list(data$Year), mean, na.rm="TRUE")
-ggplot(year, aes(x=Group.1,y=Life.expectancy)) +
+expectancy_time_plot <- ggplot(year, aes(x=Group.1,y=Life.expectancy)) +
   geom_bar(stat="Identity", fill="steelblue") + 
   xlab("Year") + ylab("Life Expectancy") +
   facet_zoom(ylim = c(60, 75))
