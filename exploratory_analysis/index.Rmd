@@ -1,6 +1,6 @@
 ---
 title: "Exploratory Analysis"
-author: "Jacob Ye, Matt Taniguchi (Add your names here)"
+author: "Jacob Ye, Matt Taniguchi, Ryan Oh(Add your names here)"
 date: "11/19/2021"
 ---
 
