@@ -1,5 +1,4 @@
 # Author: Jacob Ye
-install.packages("ggforce")
 library("ggplot2")
 library("tidyverse")
 library("ggforce")
