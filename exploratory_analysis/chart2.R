@@ -6,7 +6,7 @@ data <- read.csv("/Users/ryanoh/Desktop/info201/info-201-final-project/data/Life
 infant_deaths_per_year <- aggregate(data[6], list(data$Year), mean, na.rm = "TRUE")
 View(infant_deaths_per_year)
 infant_scatterplot <- ggplot(data = infant_deaths_per_year) +
-  geom_point(mapping = aes(x = Group.1, y = infant.death)) +
+  geom_point(mapping = aes(x = Group.1, y = infant.deaths)) +
   xlab("Year") + ylab("Average Infant Deaths")
 
 

@@ -67,10 +67,25 @@ that it improves over time, it doesn't show what is causing it explicity to
 increase.
 
 # Chart 2
-## aaaaaa
-chart 2 here
+## Average Infant Death Rate by Year
 
-# Chart 3
+```{r echo=FALSE}
+# Chart 2
+infant_scatterplot
+```
+
+A good look at the infant deaths by the year can help us draw connections
+to overall societal conditions The infant death rate can reveal whether or 
+not our world as a whole is healthy. We can then use this to connect years 
+where morality rates maybe to high to reasoning that the world was affected
+by a variable which impacted global health.
+
+From the chart, we can deduce that the trend of infant death rates goes down 
+as the years increase. This shows us that the global health is improving, but
+this data set does not inlclude COVID affected years, which will be interesting
+to see going forward as there was a global health crisis.
+Chart 3
+
 ## aaaaaa
 chart 3 here
 
