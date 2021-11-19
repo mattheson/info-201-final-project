@@ -1,6 +1,6 @@
 ---
 title: "Exploratory Analysis"
-author: "Jacob Ye, Matt Taniguchi, Ryan Oh(Add your names here)"
+author: "Jacob Ye, Matt Taniguchi, Ryan Oh, Javid Nuriyev"
 date: "11/19/2021"
 ---
 
@@ -8,10 +8,12 @@ date: "11/19/2021"
 library("knitr")
 library("ggplot2")
 library("ggforce")
+library("dplyr")
+library("gridExtra")
 
 source("aggregate_table.R")
 source("chart1.R")
-source("chart2.R")
+source("chart3.R")
 ```
 
 # Introduction
@@ -86,7 +88,22 @@ this data set does not inlclude COVID affected years, which will be interesting
 to see going forward as there was a global health crisis.
 Chart 3
 
-## aaaaaa
-chart 3 here
+# Chart 3
+## Life Expectancy and GDP 
+
+```{r echo=FALSE}
+# Chart 3
+plot(ggp_sum)
+```
+
+This line graph shows the trends of life expectancy and
+GDP values between developing and developed countries. Looking to the chart, 
+we can observe that life expectancy and GDP is much higher for developed 
+countries in compare to developing ones. At the same time, the lines has the 
+similar trends of increase for developed countries, while it increases 
+insignificantly for developed countries. This graph tell us that there is a gap 
+between developing and developed countries in terms of life expectancy. Increasing 
+GDP rates might be correlated with life expectancy rate as they follow the similar
+trend.
 
 ***
