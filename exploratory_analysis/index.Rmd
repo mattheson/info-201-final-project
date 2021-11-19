@@ -11,7 +11,7 @@ library("ggforce")
 
 source("aggregate_table.R")
 source("chart1.R")
-
+source("chart2.R")
 ```
 
 # Introduction
