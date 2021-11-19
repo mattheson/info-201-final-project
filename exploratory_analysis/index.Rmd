@@ -2,7 +2,6 @@
 title: "Exploratory Analysis"
 author: "Jacob Ye (Add your names here)"
 date: "11/19/2021"
-output: html_document
 ---
 
 ```{r include=FALSE}
