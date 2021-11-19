@@ -1,6 +1,6 @@
 ---
 title: "Exploratory Analysis"
-author: "Jacob Ye (Add your names here)"
+author: "Jacob Ye, Matt Taniguchi (Add your names here)"
 date: "11/19/2021"
 ---
 
@@ -8,12 +8,25 @@ date: "11/19/2021"
 library("knitr")
 library("ggplot2")
 library("ggforce")
+
 source("chart1.R")
+
 ```
 
+# Introduction
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+
+# Summary
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+
+# Aggregate Table
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+
+# Chart 1
 ## Life Expectancy over Time
 
 ```{r echo=FALSE}
+# TODO: Are you able to import this graph from chart1.R?
 # Chart 1
 ggplot(year, aes(x=Group.1,y=Life.expectancy)) +
   geom_bar(stat="Identity", fill="steelblue") + 
@@ -26,5 +39,13 @@ We think that it's important to see the general trend and see if it
 aligns of what we think how life expectancy should change, and We think that
 it does corroborate with our beliefs that as time passes on our health as
 technology gets better.
+
+# Chart 2
+## aaaaaa
+chart 2 here
+
+# Chart 3
+## aaaaaa
+chart 3 here
 
 ***
