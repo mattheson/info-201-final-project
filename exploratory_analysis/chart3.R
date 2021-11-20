@@ -3,7 +3,11 @@ library("ggplot2")
 library("dplyr")
 library("tidyverse")
 
+<<<<<<< HEAD
 data <- read.csv("/Users/javidnuriyev/Downloads/info-201-final-project-main/info-201-final-project/data/Life Expectancy Data.csv")
+=======
+data <- read.csv("../data/Life Expectancy Data.csv")
+>>>>>>> 96381ba5c8f3762ad1afdfa7601f992a6a72aff1
 
 library(tidyverse)
 library(ggplot2)

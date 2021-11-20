@@ -85,9 +85,9 @@ by a variable which impacted global health.
 
 From the chart, we can deduce that the trend of infant death rates goes down 
 as the years increase. This shows us that the global health is improving, but
-this data set does not inlclude COVID affected years, which will be interesting
+this data set does not include COVID affected years, which will be interesting
 to see going forward as there was a global health crisis.
-Chart 3
+
 
 # Chart 3
 ## Life Expectancy and GDP 
