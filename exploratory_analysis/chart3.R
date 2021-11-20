@@ -1,45 +1,26 @@
 #Author: Javid Nuriyev
+library("tidyverse")
 library("ggplot2")
-library("dplyr")
-library("gridExtra")
 
-data <- read.csv("../data/Life Expectancy Data.csv")
+data <- read.csv("../data/Life Expectancy Data.csv") %>%
+  group_by(Country) %>%
+  filter(!is.na(Life.expectancy)) %>%
+  summarise(Country, Status, avg=mean(Life.expectancy)) %>%
+  slice_head() %>%
+  arrange(desc(avg))
 
-group_by_developed <- data %>%
-  filter(Status == "Developed") %>%
-  group_by(Year) %>%
-  na.omit(Life.expectancy) %>%
-  na.omit(GDP) %>%
-  summarise(Life.expectancy = mean(Life.expectancy), GDP = mean(GDP) ) 
+life_expectancy_gdp <- ggplot(data, aes(x=reorder(Country, avg), y=avg, fill=Status)) +
+  geom_bar(stat = "identity") +
+  coord_flip() +
+  theme(axis.title.y=element_text(), axis.text.y=element_blank()) +
+  scale_y_discrete("Average life expectancy (mean)") +
+  scale_x_discrete("Country")
 
-group_by_developing <- data %>%
-  filter(Status == "Developing", Year < 2015) %>%
-  group_by(Year) %>%
-  na.omit(Life.expectancy) %>%
-  na.omit(GDP) %>%
-  summarise(Life.expectancy = mean(Life.expectancy), GDP = mean(GDP) )  
+print(plot)
 
-ggp1 <- ggplot(group_by_developed, aes(x = Year)) + 
-  geom_line(mapping = aes(y = Life.expectancy), color = "blue") +
-  geom_line(mapping = aes(y = group_by_developing$Life.expectancy), color = "red") +
-  xlab("Year") + ylab("Life Expectancy") 
-
-ggp2 <- ggplot(group_by_developed, aes(x = Year)) + 
-  geom_line(mapping = aes(y = GDP), color = "blue") +
-  geom_line(mapping = aes(y = group_by_developing$GDP), color = "red") +
-  xlab("Year") + ylab("GDP")
-
-ggp_sum <- grid.arrange(ggp1, ggp2)
-
-plot(ggp_sum)
-
-# This line graph shows the trends of life expectancy and
-# GDP values between developing and developed countries. Looking to the chart, 
-# we can observe that life expectancy and GDP is much higher for developed 
-# countries in compare to developing ones. At the same time, the lines has the 
-# similar trends of increase for developed countries, while it increases 
-# insignificantly for developed countries. This graph tell us that there is a gap 
-# between developing and developed countries in terms of life expectancy. Increasing 
-# GDP rates might be correlated with life expectancy rateas they follow the similar
-# trend.
-
+# This plot shows average life expectancy of each country dividing them by 
+# developed and developing countries. We can observe that developing countries 
+# have lower life expectancy than developed countries. It gives us an 
+# understanding that life expectancy is depend on country’s status. 
+# After this point, we can further explore what variables affect country’s status,
+# and find a relationship between those variables and life expectancy.

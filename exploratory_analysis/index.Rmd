@@ -64,9 +64,9 @@ expectancy_time_plot
 We included this chart to show how life expectancy has changed over the years.
 We think that it's important to see the general trend and see if it
 aligns of what we think how life expectancy should change, and We think that
-it does corroborate with our beliefs that as time passes on our health as
+it does corroborate with our beliefs that as time passes on, our health
 technology gets better. Though it is important to mention that despite knowing
-that it improves over time, it doesn't show what is causing it explicitly to
+that it improves over time, it doesn't show what is explicitly causing it to
 increase.
 
 # Chart 2
@@ -90,21 +90,18 @@ to see going forward as there was a global health crisis.
 
 
 # Chart 3
-## Life Expectancy and GDP 
+## Average Life Expectancy over Country by Status 
 
 ```{r echo=FALSE}
 # Chart 3
-plot(ggp_sum)
+life_expectancy_gdp
 ```
 
-This line graph shows the trends of life expectancy and
-GDP values between developing and developed countries. Looking to the chart, 
-we can observe that life expectancy and GDP is much higher for developed 
-countries in compare to developing ones. At the same time, the lines has the 
-similar trends of increase for developed countries, while it increases 
-insignificantly for developed countries. This graph tell us that there is a gap 
-between developing and developed countries in terms of life expectancy. Increasing 
-GDP rates might be correlated with life expectancy rate as they follow the similar
-trend.
+This plot shows average life expectancy of each country dividing them by 
+developed and developing countries. We can observe that developing countries 
+have lower life expectancy than developed countries. It gives us an 
+understanding that life expectancy is depend on country’s status. 
+After this point, we can further explore what variables affect country’s status,
+and find a relationship between those variables and life expectancy.
 
 ***

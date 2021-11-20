@@ -4,10 +4,12 @@ library("tidyverse")
 library("ggforce")
 data <- read.csv("../data/Life Expectancy Data.csv")
 year <- aggregate(data[4],list(data$Year), mean, na.rm="TRUE")
-expectancy_time_plot <- ggplot(year, aes(x=Group.1,y=Life.expectancy)) +
-  geom_bar(stat="Identity", fill="steelblue") + 
-  xlab("Year") + ylab("Life Expectancy") +
-  facet_zoom(ylim = c(60, 75))
+expectancy_time_plot <- ggplot(year, aes(x=Group.1,y=Life.expectancy, group=1)) +
+  geom_line() +
+  geom_point() +
+  xlab("Year") +
+  ylab("Life Expectancy")
+
 
 # We included this chart to show how life expectancy has changed over the years.
 # We think that it's important to see the general trend and see if it
