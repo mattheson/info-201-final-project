@@ -13,10 +13,10 @@ life_expectancy_gdp <- ggplot(data, aes(x=reorder(Country, avg), y=avg, fill=Sta
   geom_bar(stat = "identity") +
   coord_flip() +
   theme(axis.title.y=element_text(), axis.text.y=element_blank()) +
-  scale_y_discrete("Average life expectancy (mean)") +
-  scale_x_discrete("Country")
+  ylab("Average life expectancy from 2000-2015 (mean)") +
+  xlab("Countries")
 
-print(plot)
+print(life_expectancy_gdp)
 
 # This plot shows average life expectancy of each country dividing them by 
 # developed and developing countries. We can observe that developing countries 
