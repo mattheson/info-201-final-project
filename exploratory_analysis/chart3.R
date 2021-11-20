@@ -2,7 +2,7 @@
 library("tidyverse")
 library("ggplot2")
 
-data <- read.csv("../data/Life Expectancy Data.csv") %>%
+data <- read.csv("/Users/javidnuriyev/Desktop/info-201-final-project/data/Life Expectancy Data.csv") %>%
   group_by(Country) %>%
   filter(!is.na(Life.expectancy)) %>%
   summarise(Country, Status, avg=mean(Life.expectancy)) %>%
@@ -17,7 +17,6 @@ plot <- ggplot(data, aes(x=reorder(Country, avg), y=avg, fill=Status)) +
   scale_x_discrete("Country")
 
 print(plot)
-
 
 # This plot shows average life expectancy of each country dividing them by 
 # developed and developing countries. We can observe that developing countries 
