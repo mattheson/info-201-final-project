@@ -43,7 +43,7 @@ server <- function(input, output) {
           axis.ticks = element_blank(),
           axis.title.x = element_blank(),
           axis.title.y = element_blank(),
-          rect = element_blank()))
+          rect = element_blank()) + coord_map(xlim=c(-180,180)))
   # output$page2 <-
   # output$page3 <-
 }
