@@ -85,12 +85,12 @@ ui <- navbarPage(
     "Page 3",
     selectInput(
       inputId = "country1",
-      label = "First country:",
+      label = "First country (blue):",
       choices = unique(expectancy_data$Country)
     ),
     selectInput(
       inputId = "country2",
-      label = "Second country:",
+      label = "Second country (red):",
       choices = unique(expectancy_data$Country)
     ),
     radioButtons(
@@ -98,7 +98,10 @@ ui <- navbarPage(
       label = "Variable to plot:",
       c("Life Expectancy" = "Life.expectancy",
         "Adult Mortality" = "Adult.Mortality",
-        "Infant Deaths"   = "infant.deaths"
+        "Infant Deaths"   = "infant.deaths",
+        "Alcohol Consumption" = "Alcohol",
+        "GDP"             =     "GDP",
+        "Population"      =     "Population",
         )
     ),
     plotOutput("country_comparison")
