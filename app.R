@@ -161,7 +161,7 @@ server <- function(input, output) {
           select(Year, input$value),
         aes(x = Year, y = eval(parse(text=input$value))),
         color = "red"
-      ) + ylab("Hello")
+      ) + ylab("")
   )
   
 }
