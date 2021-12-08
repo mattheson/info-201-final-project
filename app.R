@@ -97,11 +97,12 @@ ui <- navbarPage(
       inputId = "value",
       label = "Variable to plot:",
       c("Life Expectancy" = "Life.expectancy",
-        "Adult Mortality" = "Adult.Mortality",
-        "Infant Deaths"   = "infant.deaths",
-        "Alcohol Consumption" = "Alcohol",
-        "GDP"             =     "GDP",
+        "Adult Mortality (percent of dying between 15 and 60 yrs old, per 1000 people)" = "Adult.Mortality",
+        "Infant Deaths (deaths per 1000 people)"   = "infant.deaths",
+        "Alcohol Consumption (consumption of litres of pure alcohol for ages 15+)" = "Alcohol",
+        "GDP (USD)"             =     "GDP",
         "Population"      =     "Population",
+        "Schooling (average total years of schooling)" = "Schooling"
         )
     ),
     plotOutput("country_comparison")
