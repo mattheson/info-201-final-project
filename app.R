@@ -15,7 +15,7 @@ filter_mapdata <- mapdata_joined %>% filter(!is.na(mapdata_joined$Life.expectanc
 ui <- navbarPage("Info 201 Final Project",
   tabPanel("Introduction",
            h1("Analysis of Mortality-Related Factors in the U.S. and Worldwide"),
-           em(h3("Group _ (Ryan, Javid, Jacob, Matt)")),
+           em(h3("Group: (Ryan, Javid, Jacob, Matt)")),
            img(src="http://med.stanford.edu/content/dam/sm-news/images/2015/05/surgery-developing-world-msf.jpg", 
                width="50%", height="50%", align="right"),
            p("In this project, we were focused on analyzing and discovering factors
@@ -62,7 +62,8 @@ server <- function(input, output) {
         Year == input$causes_year
       ) %>%
       group_by(Cause.Name) %>%
-      summarise(deaths=sum(as.numeric(str_replace_all(Deaths, ",", ""))))
+      summarise(deaths=sum(as.numeric(str_replace_all(Deaths, ",", "")))) %>%
+      rename("Cause" = Cause.Name, "Number of Deaths" = deaths)
   )
   # output$page3 <-
 }
