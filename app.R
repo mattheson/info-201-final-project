@@ -1,6 +1,8 @@
 library(shiny)
 library(tidyverse)
 library(ggplot2)
+library(maps)
+library(mapproj)
 
 expectancy_data <- read.csv("./data/Life Expectancy Data.csv")
 # mortality_data <- read_excel("./data/Mortality-rate-among-children-and-you-age-5-to-24_2020.xlsx")
@@ -54,12 +56,6 @@ ui <- navbarPage(
   tabPanel(
     "Page 1",
     h1("Life Expectancy Worldwide by Year"),
-    img(
-      src = "https://cdn.discordapp.com/attachments/904791430768263248/918000513356808192/image.axd.webp",
-      width = "50%",
-      height = "50%",
-      align = "right"
-    ),
     sliderInput(
       "expectancy_year",
       label = "Select year",
