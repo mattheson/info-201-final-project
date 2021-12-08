@@ -29,7 +29,10 @@ ui <- navbarPage("Info 201 Final Project",
            sliderInput("year", label="Select year", min=2000, max=2015, value=2015, 
                        sep="", ticks=F), 
            plotOutput("worldplot")),
-  tabPanel("Page 2"),
+  tabPanel("Page 2",
+           sliderInput("year", label="Select year", min=2000, max=2015, value=2015, 
+                       sep="", ticks=F),
+           tableOutput("death_causes")),
   tabPanel("Page 3"),
   tabPanel("Conclusion",
            p("From analyzing our results, we can see that ..."))
@@ -48,7 +51,22 @@ server <- function(input, output) {
           axis.title.x = element_blank(),
           axis.title.y = element_blank(),
           rect = element_blank()) + coord_map(xlim=c(-180,180)))
-  # output$page2 <-
+  
+  page2 <- function(year) {
+    df <- group_by(
+      filter(
+        causes_data,
+        Year == year
+      ),
+      causes_data[3]
+    )
+    
+    return(df)
+  }
+  
+  output$death_causes <- renderTable(
+    page2(input$year)
+  )
   # output$page3 <-
 }
 
