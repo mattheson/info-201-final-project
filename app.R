@@ -150,18 +150,16 @@ server <- function(input, output) {
     ggplot() +
       geom_line(
         data = expectancy_data %>%
-          filter(!(is.na(Year) ||
-                     is.na(!!input$value)), Country == input$country1) %>%
-          select(Year,!!input$value),
-        aes(x = Year, y = !!input$value),
+          filter(Country == input$country1) %>%
+          select(Year,input$value),
+        aes(x = Year, y = eval(parse(text=input$value))),
         color = "blue"
       ) +
       geom_line(
         data = expectancy_data %>%
-          filter(!(is.na(Year) ||
-                     is.na(!!input$value)), Country == input$country2) %>%
-          select(Year,!!input$value),
-        aes(x = Year, y = !!input$value),
+          filter(Country == input$country2) %>%
+          select(Year, input$value),
+        aes(x = Year, y = eval(parse(text=input$value))),
         color = "red"
       ) + ylab("Hello")
   )
