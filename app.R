@@ -26,11 +26,11 @@ ui <- navbarPage("Info 201 Final Project",
              causes of death throughout the United States.")),
   tabPanel("Page 1",
            h1("Life Expectancy Worldwide by Year"),
-           sliderInput("year", label="Select year", min=2000, max=2015, value=2015, 
+           sliderInput("expectancy_year", label="Select year", min=2000, max=2015, value=2015, 
                        sep="", ticks=F), 
            plotOutput("worldplot")),
   tabPanel("Page 2",
-           sliderInput("year", label="Select year", min=2000, max=2015, value=2015, 
+           sliderInput("causes_year", label="Select year", min=2000, max=2015, value=2015, 
                        sep="", ticks=F),
            tableOutput("death_causes")),
   tabPanel("Page 3"),
@@ -40,7 +40,7 @@ ui <- navbarPage("Info 201 Final Project",
 
 server <- function(input, output) {
   output$worldplot <- renderPlot(
-    ggplot(filter(filter_mapdata, Year==input$year),
+    ggplot(filter(filter_mapdata, Year==input$expectancy_year),
            aes(x=long, y=lat, group=group)) +
     geom_polygon(aes(fill = Life.expectancy), color = "black") +
     scale_fill_gradient(name="Average Life Expectancy", low="yellow", 
@@ -52,18 +52,14 @@ server <- function(input, output) {
           axis.title.y = element_blank(),
           rect = element_blank()) + coord_map(xlim=c(-180,180)))
   
-  page2 <- function(year) {
-    return(
-      causes_data %>%
-      filter(
-        Year == year
-      ) %>%
-      group_by("Cause.Name")
-    )
-  }
-  
   output$death_causes <- renderTable(
-    page2(input$year)
+    causes_data %>%
+      filter(
+        !(is.na(Year) || is.na(Deaths) || is.na(Cause.Name)),
+        Year == input$causes_year
+      ) %>%
+      group_by(Cause.Name) %>%
+      summarise(deaths=sum(as.numeric(str_replace_all(Deaths, ",", ""))))
   )
   # output$page3 <-
 }
