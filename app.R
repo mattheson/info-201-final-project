@@ -53,15 +53,13 @@ server <- function(input, output) {
           rect = element_blank()) + coord_map(xlim=c(-180,180)))
   
   page2 <- function(year) {
-    df <- group_by(
+    return(
+      causes_data %>%
       filter(
-        causes_data,
         Year == year
-      ),
-      causes_data[3]
+      ) %>%
+      group_by("Cause.Name")
     )
-    
-    return(df)
   }
   
   output$death_causes <- renderTable(
