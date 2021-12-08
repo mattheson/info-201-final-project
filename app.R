@@ -23,7 +23,10 @@ ui <- navbarPage("Info 201 Final Project",
              Our first dataset is a life expectancy dataset from the WHO, containing 
              information about expectancies in different countries between the years
              2000 to 2015. Our second dataset is from the CDC and contains data about
-             causes of death throughout the United States.")),
+             causes of death throughout the United States."),
+           p("Three questions that we are aiming to answer were: "),
+           em(strong(p("What does the global life expectancy look like over the past 20~ years?"))),
+           em(strong(p("What were the leading causes of death in America over the past 20~ years?")))),
   tabPanel("Page 1",
            h1("Life Expectancy Worldwide by Year"),
            sliderInput("expectancy_year", label="Select year", min=2000, max=2015, value=2015, 
