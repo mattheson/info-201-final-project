@@ -1,6 +1,6 @@
 library(shiny)
 library(tidyverse)
-# library(readxl)
+library(ggplot2)
 
 expectancy_data <- read.csv("./data/Life Expectancy Data.csv")
 # mortality_data <- read_excel("./data/Mortality-rate-among-children-and-you-age-5-to-24_2020.xlsx")
@@ -14,16 +14,20 @@ filter_mapdata <- mapdata_joined %>% filter(!is.na(mapdata_joined$Life.expectanc
 
 ui <- navbarPage("Info 201 Final Project",
   tabPanel("Introduction",
-           h1("Analysis of Life Expectancy Worldwide"),
-           em(h3("Group _ (Ryan, Javid, Jacob, Matt")),
+           h1("Analysis of Mortality-Related Factors in the U.S. and Worldwide"),
+           em(h3("Group _ (Ryan, Javid, Jacob, Matt)")),
            img(src="http://med.stanford.edu/content/dam/sm-news/images/2015/05/surgery-developing-world-msf.jpg", 
                width="50%", height="50%", align="right"),
-           p("In this project, we were focused on analyzing data relating to mortality
-             and life expectancy from the U.S. and across the world. Our first dataset
-             is a Life Expectancy dataset from the WHO, containing data about life
-             expectancy across the world.")),
-  tabPanel("Page 1", 
-           sliderInput("year", label="Select year", min=2000, max=2015, value=2015, sep=""), 
+           p("In this project, we were focused on analyzing and discovering factors
+             related to life expectancy and mortality in the U.S. and other countries.
+             Our first dataset is a life expectancy dataset from the WHO, containing 
+             information about expectancies in different countries between the years
+             2000 to 2015. Our second dataset is from the CDC and contains data about
+             causes of death throughout the United States.")),
+  tabPanel("Page 1",
+           h1("Life Expectancy Worldwide by Year"),
+           sliderInput("year", label="Select year", min=2000, max=2015, value=2015, 
+                       sep="", ticks=F), 
            plotOutput("worldplot")),
   tabPanel("Page 2"),
   tabPanel("Page 3"),
