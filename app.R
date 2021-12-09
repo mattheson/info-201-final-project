@@ -121,7 +121,10 @@ ui <- navbarPage(
            strong(p("Key Takeaway 1")),
            p("Although many would expect the global life expectancy to raise over the past 20~ years, the map and slider show us that it isn’t the case. Many countries either keep the same life expectancy, or worse decrease. Some notable diffrences from 2000 to 2015 are Canada and Australia’s life expectancies. As developed countries, it is an interesting observation to see that their color goes from blue to purple (life expectancy equivalent of 90 to 80)."),
            strong(p("Key Takeaway 2")),
-           p("The number of deaths in the USA has increased over the last 20 years partly because of an increasing population, but there are key insights that the trends of the chart shows. First, we the USA still deals with medical advancement towards curing Alzheimers and cancer, which are both large contributors towards death in America. Another key observation is the rapid increase in suicide deaths from 1999 - 2017, which can be attributed to an increase in mental health struggle across this country’s population. "))
+           p("The number of deaths in the USA has increased over the last 20 years partly because of an increasing population, but there are key insights that the trends of the chart shows. First, we the USA still deals with medical advancement towards curing Alzheimers and cancer, which are both large contributors towards death in America. Another key observation is the rapid increase in suicide deaths from 1999 - 2017, which can be attributed to an increase in mental health struggle across this country’s population. "),
+           strong(p("Key Takeaway 3")),
+           p("Comparing variables of two countries, we can observe that countries with higher GDP level tend to get higher level of life expectancy on average. Another interesting observation is that countries with higher life expectancy rate have lower infant death rate over the last 20 years.")
+  )
 )
 
 server <- function(input, output) {
