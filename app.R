@@ -79,7 +79,8 @@ ui <- navbarPage(
       sep = "",
       ticks = F
     ),
-    tableOutput("death_causes")
+    tableOutput("death_causes"),
+    plotOutput("death_causes_plot")
   ),
   tabPanel(
     "Compare Countries",
@@ -161,6 +162,23 @@ server <- function(input, output) {
         str_replace_all(Deaths, ",", "")
       ))) %>%
       rename("Cause" = Cause.Name, "Number of Deaths" = deaths)
+  )
+  
+  output$death_causes_plot <- renderPlot(
+    ggplot(data = causes_data %>%
+             filter(!(
+               is.na(Year) || is.na(Deaths) || is.na(Cause.Name)
+             ),
+             Year == input$causes_year) %>%
+             group_by(Cause.Name) %>%
+             summarise(deaths = sum(as.numeric(
+               str_replace_all(Deaths, ",", "")
+             ))) %>%
+             filter(Cause.Name!="All causes"),
+           aes(x=Cause.Name, y=deaths)) +
+      geom_bar(stat="identity") +
+      ylab("Number of Deaths") +
+      xlab("Cause of Death")
   )
   
   output$country_comparison <- renderPlot(
