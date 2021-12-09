@@ -54,7 +54,7 @@ ui <- navbarPage(
     ))
   ),
   tabPanel(
-    "Page 1",
+    "Life Expectancy of the World",
     h1("Life Expectancy Worldwide by Year"),
     sliderInput(
       "expectancy_year",
@@ -68,7 +68,7 @@ ui <- navbarPage(
     plotOutput("worldplot")
   ),
   tabPanel(
-    "Page 2",
+    "Deaths in the USA",
     h1("Causes of Deaths by Year in the USA"),
     sliderInput(
       "causes_year",
@@ -82,7 +82,7 @@ ui <- navbarPage(
     tableOutput("death_causes")
   ),
   tabPanel(
-    "Page 3",
+    "Compare Countries",
     selectInput(
       inputId = "country1",
       label = "First country (blue):",
