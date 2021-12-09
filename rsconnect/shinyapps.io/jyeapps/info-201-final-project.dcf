@@ -5,7 +5,7 @@ account: jyeapps
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 5288884
-bundleId: 5347372
+bundleId: 5347926
 url: https://jyeapps.shinyapps.io/info-201-final-project/
-when: 1639001543.19474
-lastSyncTime: 1639001543.19474
+when: 1639012153.49771
+lastSyncTime: 1639012153.49771
